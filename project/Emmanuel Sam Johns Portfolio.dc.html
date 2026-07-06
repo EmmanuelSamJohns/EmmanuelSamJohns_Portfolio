@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&amp;family=Source+Sans+3:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; }
+    ::selection { background: oklch(0.75 0.13 190 / 0.3); }
+    a { text-decoration: none; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+  </style>
+</helmet>
+
+<div style="font-family: 'Source Sans 3', sans-serif; background: {{ t.bg }}; color: {{ t.textPrimary }}; min-height: 100vh; transition: background 0.25s ease, color 0.25s ease;">
+
+  <!-- NAV -->
+  <div style="position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; padding: 20px 48px; background: {{ t.navBg }}; backdrop-filter: blur(10px); border-bottom: 1px solid {{ t.border }};">
+    <a href="#top" style="font-family: 'Newsreader', serif; font-size: 20px; letter-spacing: 0.02em; color: {{ t.heading }}; font-weight: 500;">Emmanuel Sam Johns</a>
+    <div style="display: flex; align-items: center; gap: 28px;">
+      <a href="#about" style="color: {{ t.navLink }}; font-size: 14px; font-weight: 500;">About</a>
+      <a href="#experience" style="color: {{ t.navLink }}; font-size: 14px; font-weight: 500;">Experience</a>
+      <a href="#projects" style="color: {{ t.navLink }}; font-size: 14px; font-weight: 500;">Projects</a>
+      <a href="#contact" style="color: {{ t.navLink }}; font-size: 14px; font-weight: 500;">Contact</a>
+      <a href="assets/Emmanuel_Sam_Johns_CV.pdf" download="Emmanuel_Sam_Johns_CV.pdf" style="display: flex; align-items: center; gap: 8px; background: {{ t.teal }}; color: {{ t.onAccent }}; font-size: 14px; font-weight: 600; padding: 10px 18px; border-radius: 999px;" style-hover="filter: brightness(1.08);">Download CV</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <div id="top" style="max-width: 1100px; margin: 0 auto; padding: 100px 48px 90px; display: grid; grid-template-columns: 1.4fr 1fr; gap: 60px; align-items: end;">
+    <div style="animation: fadeUp 0.7s ease both;">
+      <div style="font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: {{ t.teal }}; font-weight: 600; margin-bottom: 22px;">Aspiring Environmental Consultant</div>
+      <h1 style="font-family: 'Newsreader', serif; font-weight: 500; font-size: 60px; line-height: 1.08; margin: 0 0 26px; color: {{ t.heading }};">Bringing field science and spatial data to environmental consulting.</h1>
+      <p style="font-size: 22px; line-height: 1.65; color: {{ t.body }}; max-width: 56ch; margin: 0 0 34px; width: 628px; height: 174px"><b style="font-weight: 500"><span style="font-weight: 400">Masters graduate from James Cook University bringing skills in spatial mapping, GIS, and remote sensing to the table. Aspiring to work as an environmental consultant, translating field and satellite data into clear outputs for environmental decision-making.</span></b></p>
+      <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+        <a href="assets/Emmanuel_Sam_Johns_CV.pdf" download="Emmanuel_Sam_Johns_CV.pdf" style="background: {{ t.teal }}; color: {{ t.onAccent }}; font-weight: 600; font-size: 15px; padding: 14px 26px; border-radius: 999px;" style-hover="filter: brightness(1.08);">Download CV</a>
+        <a href="https://www.linkedin.com/in/emmanuel-sam-johns-1b54911b2" target="_blank" rel="noopener" style="border: 1px solid {{ t.borderButton }}; color: {{ t.textPrimary }}; font-weight: 600; font-size: 15px; padding: 14px 26px; border-radius: 999px;" style-hover="border-color: {{ t.teal }}; color: {{ t.teal }};">LinkedIn ↗</a>
+        <a href="mailto:emmanuel.samjohns@my.jcu.edu.au" style="border: 1px solid {{ t.borderButton }}; color: {{ t.textPrimary }}; font-weight: 600; font-size: 15px; padding: 14px 26px; border-radius: 999px;" style-hover="border-color: {{ t.teal }}; color: {{ t.teal }};">Email</a>
+      </div>
+    </div><div style="border-left: 1px solid {{ t.borderStrong }}; padding-left: 32px; display: flex; flex-direction: column; gap: 22px; animation: fadeUp 0.7s ease 0.15s both;">
+      <div>
+        <div style="font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: {{ t.label62 }}; margin-bottom: 6px;">Based in</div>
+        <div style="font-size: 16px; color: {{ t.textPrimary }};">Townsville, QLD, Australia</div>
+      </div>
+      <div>
+        <div style="font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: {{ t.label62 }}; margin-bottom: 6px;">Phone</div>
+        <div style="font-size: 16px; color: {{ t.textPrimary }};">+61 461 398 511</div>
+      </div>
+    </div>
+    
+  </div>
+
+  <!-- ABOUT -->
+  <div id="about" style="max-width: 1100px; margin: 0 auto; padding: 20px 48px 90px; border-top: 1px solid {{ t.border }}; width: 1125px; height: 625px">
+    <div style="display: grid; grid-template-columns: 220px 1fr; gap: 50px; padding-top: 70px; width: 1108px; height: 603px">
+      <div style="font-family: 'Newsreader', serif; font-size: 40px; color: {{ t.heading }}; font-weight: 500; text-decoration-line: none">About</div><div style="display: flex; flex-direction: column; gap: 22px; max-width: 68ch; width: 592px; height: 699px">
+        <p style="font-size: 22px; line-height: 1.75; color: {{ t.body }}; margin: 0; display: block; text-align: justify; width: 647px; height: 109px">I'm Emmanuel Sam Johns, a Master of Marine Biology graduate from James Cook University with hands-on experience in environmental monitoring, spatial data analysis, and fieldwork.<br><br></p>
+        
+        <p style="font-size: 22px; line-height: 1.75; color: {{ t.body }}; margin: 0; display: block; text-align: justify; width: 645px; height: 274px">During my research internship at JCU, I helped build a long-term ecological monitoring framework for Pioneer Bay, combining drone imagery, R-based spatial mapping, and on-site field validation, and worked directly with OIRS, AIMS, and JCU stakeholders to design permanent reef transects. Furthermore, I have spent time in hatchery and aquaculture operations at MPEDA-RGCA in Kochi, adding to my experience working in biosecurity-conscious settings.<br></p><p style="font-size: 22px; line-height: 1.75; color: {{ t.body }}; margin: 0; display: block; text-align: justify; width: 645px; height: 175px">I enjoy translating scientific and spatial data into clear, structured outputs that support real decision-making, and I'm now looking to bring that combination of field science, GIS, and reporting into a graduate environmental consulting role.</p>
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <div id="experience" style="max-width: 1100px; margin: 0 auto; padding: 0 48px 90px; border-top: 1px solid {{ t.border }};">
+    <div style="display: grid; grid-template-columns: 220px 1fr; gap: 50px; padding-top: 70px;">
+      <div style="font-family: 'Newsreader', serif; font-size: 40px; color: {{ t.heading }}; position: sticky; top: 100px; align-self: start; font-weight: 500">Experience</div>
+      <div style="display: flex; flex-direction: column;">
+        <sc-for list="{{ experience }}" as="job" hint-placeholder-count="3">
+          <div style="display: grid; grid-template-columns: 200px 1fr; gap: 24px; padding: 28px 0; border-bottom: 1px solid {{ t.border }};">
+            <div style="font-size: 16px; color: {{ t.label62 }}; line-height: 1.5; position: relative">{{ job.dates }}</div>
+            <div>
+              <div style="font-size: 27px; font-weight: 700; color: {{ t.heading }}; margin-bottom: 3px">{{ job.title }}</div>
+              <div style="font-size: 17px; color: {{ t.teal }}; font-weight: 600; margin-bottom: 14px; font-style: italic">{{ job.org }}</div>
+              <ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 9px;">
+                <sc-for list="{{ job.bullets }}" as="b" hint-placeholder-count="2">
+                  <li style="font-size: 20px; line-height: 1.6; color: {{ t.body }}">{{ b }}</li>
+                </sc-for>
+              </ul>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+
+  <!-- EDUCATION -->
+  <div style="max-width: 1100px; margin: 0 auto; padding: 0 48px 90px; border-top: 1px solid {{ t.border }};">
+    <div style="display: grid; grid-template-columns: 220px 1fr; gap: 50px; padding-top: 70px;">
+      <div style="font-family: 'Newsreader', serif; font-size: 40px; color: {{ t.heading }}; font-weight: 500">Education</div>
+      <div style="display: flex; flex-direction: column; gap: 30px;">
+        <div>
+          <div style="font-size: 27px; font-weight: 700; color: {{ t.heading }}">Master of Marine Biology (MSc)</div>
+          <div style="font-size: 17px; color: {{ t.teal }}; font-weight: 600; margin: 3px 0 10px; font-style: italic">James Cook University, Townsville, Feb 2024 – Dec 2025</div>
+          <div style="font-size: 20px; line-height: 1.6; color: {{ t.body }}">GPA 5.07/7.0 (Credit average). Coursework: Remote Sensing; Coastal, Estuarine &amp; Mangrove Ecosystems; Marine Conservation Biology; Modelling Ecological Dynamics; Quantitative Methods in Science; Techniques in Marine Science 1 &amp; 2.</div>
+          <div style="display: inline-block; margin-top: 12px; font-size: 17px; font-weight: 600; color: {{ t.coral }}; border: 1px solid {{ t.coralBorder }}; padding: 5px 12px; border-radius: 999px">JCU International Excellence Award, 2024</div>
+        </div>
+        <div>
+          <div style="font-size: 27px; font-weight: 700; color: {{ t.heading }}">Bachelor of Zoology</div>
+          <div style="font-size: 17px; color: {{ t.teal }}; font-weight: 600; margin: 3px 0 10px; font-style: italic">Mahatma Gandhi University, CMS College, 2019 – 2022</div>
+          <div style="font-size: 20px; line-height: 1.6; color: {{ t.body }}">Overall grade: A.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECTS -->
+  <div id="projects" style="max-width: 1100px; margin: 0 auto; padding: 0 48px 90px; border-top: 1px solid {{ t.border }};">
+    <div style="padding-top: 70px;">
+      <div style="font-family: 'Newsreader', serif; font-size: 40px; color: {{ t.heading }}; margin-bottom: 8px; font-weight: 500">Selected Projects</div>
+      <p style="font-size: 20px; color: {{ t.label65 }}; margin: 0 0 44px">Coursework and applied research from the MB5370 spatial ecology unit at JCU.</p>
+
+      <sc-for list="{{ projects }}" as="proj" hint-placeholder-count="2">
+        <div style="border: 1px solid {{ t.borderMed }}; border-radius: 18px; background: {{ t.cardBg }}; overflow: hidden; margin-bottom: 32px;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; min-height: 280px;">
+            <div style="padding: 40px; display: flex; flex-direction: column; justify-content: center;">
+              <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px;">
+                <sc-for list="{{ proj.tags }}" as="tag" hint-placeholder-count="3">
+                  <span style="font-size: 13px; font-weight: 600; letter-spacing: 0.04em; color: {{ t.teal }}; background: {{ t.tealSoft }}; padding: 5px 11px; border-radius: 999px">{{ tag }}</span>
+                </sc-for>
+              </div>
+              <div style="font-family: 'Newsreader', serif; font-size: 28px; color: {{ t.heading }}; margin-bottom: 14px; line-height: 1.25">{{ proj.title }}</div>
+              <p style="font-size: 20px; line-height: 1.65; color: {{ t.body }}; margin: 0 0 20px">{{ proj.summary }}</p>
+              <button onClick="{{ proj.toggle }}" style="align-self: flex-start; background: none; border: 1px solid {{ t.borderButton }}; color: {{ t.textPrimary }}; font-size: 14px; font-weight: 600; padding: 10px 20px; border-radius: 999px; cursor: pointer;" style-hover="border-color: {{ t.teal }}; color: {{ t.teal }};">{{ proj.toggleLabel }}</button>
+            </div>
+            <div style="width: 100%; min-height: 280px; background-image: linear-gradient(135deg, {{ t.phA }} 0px, {{ t.phA }} 14px, {{ t.phB }} 14px, {{ t.phB }} 28px); display: flex; align-items: center; justify-content: center; text-align: center; padding: 24px;">
+              <div style="font-family: 'Source Sans 3', monospace; font-size: 13px; letter-spacing: 0.02em; color: {{ t.phText }}; line-height: 1.6;">{{ proj.imagePlaceholder }}</div>
+            </div>
+          </div>
+          <sc-if value="{{ proj.expanded }}" hint-placeholder-val="{{ false }}">
+            <div style="padding: 8px 40px 40px; border-top: 1px solid {{ t.borderMed }}; display: flex; flex-direction: column; gap: 22px; margin-top: 8px;">
+              <sc-for list="{{ proj.sections }}" as="sec" hint-placeholder-count="4">
+                <div>
+                  <div style="font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: {{ t.teal }}; font-weight: 600; margin-bottom: 8px; margin-top: 18px;">{{ sec.heading }}</div>
+                  <p style="font-size: 15.5px; line-height: 1.7; color: {{ t.body }}; margin: 0; white-space: pre-line;">{{ sec.body }}</p>
+                </div>
+              </sc-for>
+            </div>
+          </sc-if>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- SKILLS -->
+  <div style="max-width: 1100px; margin: 0 auto; padding: 0 48px 90px; border-top: 1px solid {{ t.border }};">
+    <div style="display: grid; grid-template-columns: 220px 1fr; gap: 50px; padding-top: 70px;">
+      <div style="font-family: 'Newsreader', serif; font-size: 40px; color: {{ t.heading }}; font-weight: 500">Skills &amp; Tools</div>
+      <div style="display: flex; flex-direction: column; gap: 26px;">
+        <sc-for list="{{ skillGroups }}" as="grp" hint-placeholder-count="4">
+          <div>
+            <div style="font-size: 14px; font-weight: 600; color: {{ t.heading }}; margin-bottom: 12px;">{{ grp.label }}</div>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+              <sc-for list="{{ grp.items }}" as="item" hint-placeholder-count="4">
+                <span style="font-size: 14px; color: {{ t.body }}; background: {{ t.chipBg }}; border: 1px solid {{ t.borderMed }}; padding: 8px 15px; border-radius: 10px;">{{ item }}</span>
+              </sc-for>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT / FOOTER -->
+  <div id="contact" style="border-top: 1px solid {{ t.border }}; background: {{ t.footerBg }};">
+    <div style="max-width: 1100px; margin: 0 auto; padding: 90px 48px 60px; display: grid; grid-template-columns: 1.3fr 1fr; gap: 60px;">
+      <div>
+        <div style="font-family: 'Newsreader', serif; font-size: 34px; color: {{ t.heading }}; margin-bottom: 18px; line-height: 1.2;">Let's talk about reef research, GIS work, or a graduate role.</div>
+        <p style="font-size: 16px; line-height: 1.65; color: {{ t.label65 }}; max-width: 50ch; margin: 0 0 30px;">Open to opportunities in environmental consulting, spatial analysis, and marine research support.</p>
+        <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+          <a href="mailto:emmanuel.samjohns@my.jcu.edu.au" style="background: {{ t.teal }}; color: {{ t.onAccent }}; font-weight: 600; font-size: 15px; padding: 14px 26px; border-radius: 999px;" style-hover="filter: brightness(1.08);">emmanuel.samjohns@my.jcu.edu.au</a>
+          <a href="https://www.linkedin.com/in/emmanuel-sam-johns-1b54911b2" target="_blank" rel="noopener" style="border: 1px solid {{ t.borderButton }}; color: {{ t.textPrimary }}; font-weight: 600; font-size: 15px; padding: 14px 26px; border-radius: 999px;" style-hover="border-color: {{ t.teal }}; color: {{ t.teal }};">LinkedIn ↗</a>
+          <a href="assets/Emmanuel_Sam_Johns_CV.pdf" download="Emmanuel_Sam_Johns_CV.pdf" style="border: 1px solid {{ t.borderButton }}; color: {{ t.textPrimary }}; font-weight: 600; font-size: 15px; padding: 14px 26px; border-radius: 999px;" style-hover="border-color: {{ t.teal }}; color: {{ t.teal }};">Download CV</a>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 18px; border-left: 1px solid {{ t.borderMed }}; padding-left: 40px;">
+        <div>
+          <div style="font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: {{ t.label55 }}; margin-bottom: 6px;">Phone</div>
+          <div style="font-size: 15px; color: {{ t.textPrimary }};">+61 461 398 511</div>
+        </div>
+        <div>
+          <div style="font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: {{ t.label55 }}; margin-bottom: 6px;">Location</div>
+          <div style="font-size: 15px; color: {{ t.textPrimary }};">Townsville, QLD, Australia</div>
+        </div>
+        <div>
+          <div style="font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: {{ t.label55 }}; margin-bottom: 6px;">References</div>
+          <div style="font-size: 15px; color: {{ t.textPrimary }};">Available on request</div>
+        </div>
+      </div>
+    </div>
+    <div style="max-width: 1100px; margin: 0 auto; padding: 24px 48px; border-top: 1px solid {{ t.borderMed }}; font-size: 13px; color: {{ t.labelFaint }};">© 2026 Emmanuel Sam Johns</div>
+  </div>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = {
+    expanded: { reef: false, gee: false }
+  };
+
+  toggle(key) {
+    this.setState(s => ({ expanded: { ...s.expanded, [key]: !s.expanded[key] } }));
+  }
+
+  getTheme() {
+    const theme = this.props.theme ?? 'light';
+    if (theme === 'dark') {
+      return {
+        bg: 'oklch(0.17 0.018 235)',
+        navBg: 'oklch(0.17 0.018 235 / 0.85)',
+        footerBg: 'oklch(0.14 0.018 235)',
+        cardBg: 'oklch(0.2 0.02 235 / 0.6)',
+        border: 'oklch(1 0 0 / 0.08)',
+        borderMed: 'oklch(1 0 0 / 0.1)',
+        borderStrong: 'oklch(1 0 0 / 0.12)',
+        borderButton: 'oklch(1 0 0 / 0.25)',
+        textPrimary: 'oklch(0.94 0.01 90)',
+        heading: 'oklch(0.97 0.008 90)',
+        body: 'oklch(0.8 0.015 90)',
+        label62: 'oklch(0.62 0.02 90)',
+        label55: 'oklch(0.55 0.02 90)',
+        label65: 'oklch(0.65 0.02 90)',
+        labelFaint: 'oklch(0.5 0.015 90)',
+        teal: 'oklch(0.75 0.13 190)',
+        tealSoft: 'oklch(0.75 0.13 190 / 0.12)',
+        coral: 'oklch(0.72 0.15 40)',
+        coralBorder: 'oklch(0.72 0.15 40 / 0.4)',
+        chipBg: 'oklch(1 0 0 / 0.06)',
+        onAccent: 'oklch(0.15 0.02 235)',
+        navLink: 'oklch(0.8 0.02 90)',
+        phA: 'oklch(0.24 0.02 235)',
+        phB: 'oklch(0.22 0.02 235)',
+        phText: 'oklch(0.6 0.02 90)'
+      };
+    }
+    return {
+      bg: 'oklch(0.985 0.005 90)',
+      navBg: 'oklch(0.985 0.005 90 / 0.85)',
+      footerBg: 'oklch(0.95 0.008 90)',
+      cardBg: 'oklch(1 0 0 / 0.7)',
+      border: 'oklch(0 0 0 / 0.08)',
+      borderMed: 'oklch(0 0 0 / 0.1)',
+      borderStrong: 'oklch(0 0 0 / 0.12)',
+      borderButton: 'oklch(0 0 0 / 0.18)',
+      textPrimary: 'oklch(0.28 0.015 235)',
+      heading: 'oklch(0.16 0.02 235)',
+      body: 'oklch(0.4 0.015 235)',
+      label62: 'oklch(0.48 0.015 235)',
+      label55: 'oklch(0.42 0.015 235)',
+      label65: 'oklch(0.5 0.015 235)',
+      labelFaint: 'oklch(0.58 0.012 235)',
+      teal: 'oklch(0.56 0.13 190)',
+      tealSoft: 'oklch(0.56 0.13 190 / 0.12)',
+      coral: 'oklch(0.55 0.15 40)',
+      coralBorder: 'oklch(0.55 0.15 40 / 0.35)',
+      chipBg: 'oklch(0 0 0 / 0.045)',
+      onAccent: 'oklch(0.99 0.004 90)',
+      navLink: 'oklch(0.42 0.015 235)',
+      phA: 'oklch(0.94 0.007 90)',
+      phB: 'oklch(0.9 0.007 90)',
+      phText: 'oklch(0.5 0.012 235)'
+    };
+  }
+
+  renderVals() {
+    const t = this.getTheme();
+
+    const experience = [
+      {
+        dates: 'Aug 2025 – Nov 2025',
+        title: 'Environmental Research Intern',
+        org: 'James Cook University, Marine Biology & Aquaculture',
+        bullets: [
+          'Contributed to a long-term ecological monitoring framework for Pioneer Bay, integrating drone imagery, R-based mapping, literature synthesis, and field validation to inform sampling design.',
+          'Designed and managed a structured research library of peer-reviewed studies for the OIRS Long-Term Monitoring Program.',
+          'Created coordinate-based spatial datasets and reference maps in R, overlaying satellite imagery with sampling locations across Orpheus Island and the Palm Island Group.',
+          'Assisted in designing permanent transects across reef-flat, mangrove, crest, and slope habitats, incorporating feedback from OIRS, AIMS, and JCU stakeholders.',
+          'Conducted snorkelling surveys, reef walking, and camera-based transect swims using GeoNadir drone imagery and GPS coordinates to evaluate site suitability.',
+          'Produced a structured handover report and presentation outlining project progress, methodology, and recommended next steps.'
+        ]
+      },
+      {
+        dates: 'Jun 2023 – Nov 2023',
+        title: 'Technical Trainee & Project Intern, Aquaculture & Hatchery Operations',
+        org: 'MPEDA-RGCA Multispecies Aquaculture Complex (MAC), Kochi',
+        bullets: [
+          'Worked across hatchery and nursery operations for tiger shrimp, Asian seabass, GIFT tilapia, and pearl spot, supporting broodstock management, spawning, live-feed prep, larval rearing, and water quality monitoring.',
+          'Assisted with disease diagnostics, early-stage culture management, and routine hatchery maintenance supporting biosecurity standards.',
+          'Supported training sessions for undergraduate and postgraduate students.',
+          'Invited to extend as Technical Trainee based on performance, strengthening teamwork, communication, and field discipline.'
+        ]
+      }
+    ];
+
+    const skillGroups = [
+      { label: 'GIS & Spatial Mapping', items: ['ArcGIS (in progress)', 'R (ggplot2, ggmap)', 'GeoNadir drone imagery', 'Satellite imagery analysis', 'Coordinate dataset creation', 'Google Earth Engine'] },
+      { label: 'Data & Analysis', items: ['Excel', 'Word', 'Outlook', 'Basic MATLAB', 'Structured database development', 'Literature review & synthesis'] },
+      { label: 'Field Techniques', items: ['Snorkelling surveys', 'Reef walking', 'Transect photography', 'Habitat assessment', 'Water quality testing', 'Marine lab techniques'] },
+      { label: 'Reporting & Communication', items: ['Scientific report writing', 'Technical documentation', 'Stakeholder briefings', 'Presentations'] }
+    ];
+
+    const geeSummary = 'An interactive Google Earth Engine map classifying deep-sea ecosystems by depth and slope, layered with simulated ARGO monitoring floats and the world\'s busiest fishing regions, built to support marine spatial planning and biodiversity assessment.';
+    const geeSections = [
+      { heading: 'Introduction', body: 'The deep ocean covers more than half of Earth\'s surface yet remains largely unexplored and poorly mapped. Accurate spatial data on deep-sea ecosystems and human activities is essential for conservation, research, and sustainable resource use. This project uses Google Earth Engine (GEE) to build an interactive global map visualizing deep-sea ecosystem zones, simulated oceanographic monitoring points, and major marine fishing regions, supporting Convention on Biological Diversity goals around ecosystem representation and spatial planning of marine use (Levin et al., 2001; FAO, 2020).' },
+      { heading: 'Method', body: 'Using global bathymetric data, the project classifies the seafloor into four ecosystem types: Hadal Trenches and Troughs (>6000m), Abyssal Plains (3000–6000m), Continental and Island Slopes (250–3000m), and Submarine Canyons (>200m depth, >6° slope), using logical depth/slope conditions in Earth Engine with land areas masked out. A simulated ARGO float dataset (temperature, salinity, pressure, monitored parameter) was added as a vector layer, alongside ten of the world\'s busiest fishing regions, including the Bering Sea, South China Sea, and Humboldt Current System, as labelled, color-coded markers. A custom legend built with Earth Engine\'s UI tools improves interpretability.' },
+      { heading: 'Results', body: 'The output is a global, interactive map where deep-sea ecosystems are clearly distinguishable by depth class, continental slopes and canyons align with continental margins, while hadal and abyssal zones follow ocean trenches and basins. Simulated ARGO floats appear as point data, and the key fishing regions contextualize where ecological richness overlaps with intense human activity.' },
+      { heading: 'Conclusion', body: 'This project demonstrates the power of Google Earth Engine for visualizing global ocean data by combining depth-based ecosystem mapping with monitoring analogies and human activity points. While some data is simulated, the workflow is fully transferable to real datasets like ARGO, OBIS, or FAO layers, supporting biodiversity assessments, marine spatial planning, and deep-sea conservation strategies.' }
+    ];
+
+    const reefSummary = 'A GIS case study on Heron Island, Great Barrier Reef, using ArcGIS Pro to map benthic habitat classes around the research station, then applying spatial intersection to isolate reef area accessible for in-water survey work.';
+    const reefSections = [
+      { heading: 'Background', body: 'This project used Heron Island, a coral cay in the southern Great Barrier Reef, as a case study to explore the spatial context of reef habitats relative to research facilities, an in-class workshop introducing foundational GIS concepts using satellite imagery and coral habitat datasets.' },
+      { heading: 'Method', body: 'Heron Island was located in ArcGIS Pro by coordinates, then examined using the Esri World Imagery basemap. Man-made features (buildings, infrastructure) were measured for length and area, along with the island\'s land area and surrounding reef flat. A benthic habitat shapefile from the Allen Coral Atlas was added to classify coral, sand, and other reef substrate. An Intersect analysis was then run between the benthic habitat layer and a defined research-accessible zone around the station, to isolate which habitat types fall within practical snorkelling/survey range.' },
+      { heading: 'Results', body: 'The final maps show Heron Island surrounded by color-coded benthic classes, coral reef flats, sand patches, and other substrate, with a title, scale bar, north arrow, and legend. Imagery resolution over the island is approximately 0.5m/pixel (Esri, captured 2017). The Intersect output cleanly filtered the habitat data down to the zone accessible for fieldwork, showing coral flats, seagrass patches, and sandy substrate within reach of the research station.' },
+      { heading: 'Conclusion', body: 'The exercise demonstrated how GIS can map reef environments and link spatial features to attribute data, foundational skills for environmental monitoring, habitat classification, and conservation decision-making. The Intersect tool in particular proved practical for narrowing large spatial datasets down to what matters for field planning.' }
+    ];
+
+    const projects = [
+      {
+        key: 'gee',
+        title: 'Mapping Deep Ocean Ecosystems & Human Use Hotspots',
+        tags: ['Google Earth Engine', 'Remote Sensing', 'Marine Spatial Planning'],
+        summary: geeSummary,
+        imagePlaceholder: '[ screenshot ]\nGoogle Earth Engine map\ndeep-sea ecosystem layers',
+        expanded: this.state.expanded.gee,
+        toggleLabel: this.state.expanded.gee ? 'Hide full report' : 'Read full report',
+        toggle: () => this.toggle('gee'),
+        sections: geeSections
+      },
+      {
+        key: 'reef',
+        title: 'Reef Research Station Analysis, Heron Island',
+        tags: ['ArcGIS Pro', 'Benthic Habitat Mapping', 'Spatial Analysis'],
+        summary: reefSummary,
+        imagePlaceholder: '[ screenshot ]\nArcGIS benthic habitat map\nHeron Island reef',
+        expanded: this.state.expanded.reef,
+        toggleLabel: this.state.expanded.reef ? 'Hide full report' : 'Read full report',
+        toggle: () => this.toggle('reef'),
+        sections: reefSections
+      }
+    ];
+
+    return { t, experience, skillGroups, projects };
+  }
+}
+
+</script>
+</body>
+</html>
