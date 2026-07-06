@@ -1,0 +1,24 @@
+---
+title: "Reef Research Station Analysis, Heron Island"
+publishedAt: "2025-06-01"
+summary: "A GIS case study on Heron Island, Great Barrier Reef, using ArcGIS Pro to map benthic habitat classes around the research station, then applying spatial intersection to isolate reef area accessible for in-water survey work."
+images:
+  - "/images/projects/heron-island-reef-analysis/cover.svg"
+tag: "ArcGIS Pro"
+---
+
+## Background
+
+This project used Heron Island, a coral cay in the southern Great Barrier Reef, as a case study to explore the spatial context of reef habitats relative to research facilities, an in-class workshop introducing foundational GIS concepts using satellite imagery and coral habitat datasets.
+
+## Method
+
+Heron Island was located in ArcGIS Pro by coordinates, then examined using the Esri World Imagery basemap. Man-made features (buildings, infrastructure) were measured for length and area, along with the island's land area and surrounding reef flat. A benthic habitat shapefile from the Allen Coral Atlas was added to classify coral, sand, and other reef substrate. An Intersect analysis was then run between the benthic habitat layer and a defined research-accessible zone around the station, to isolate which habitat types fall within practical snorkelling/survey range.
+
+## Results
+
+The final maps show Heron Island surrounded by color-coded benthic classes, coral reef flats, sand patches, and other substrate, with a title, scale bar, north arrow, and legend. Imagery resolution over the island is approximately 0.5m/pixel (Esri, captured 2017). The Intersect output cleanly filtered the habitat data down to the zone accessible for fieldwork, showing coral flats, seagrass patches, and sandy substrate within reach of the research station.
+
+## Conclusion
+
+The exercise demonstrated how GIS can map reef environments and link spatial features to attribute data, foundational skills for environmental monitoring, habitat classification, and conservation decision-making. The Intersect tool in particular proved practical for narrowing large spatial datasets down to what matters for field planning.

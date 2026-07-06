@@ -1,25 +1,74 @@
-# CODING AGENTS: READ THIS FIRST
+# Emmanuel Sam Johns — Portfolio
 
-This is a **handoff bundle** from Claude Design (claude.ai/design).
+Personal portfolio site for Emmanuel Sam Johns, an aspiring environmental consultant. Built on
+[Magic Portfolio](https://github.com/once-ui-system/magic-portfolio) (Next.js + [Once UI](https://once-ui.com)).
 
-A user mocked up designs in HTML/CSS/JS using an AI design tool, then exported this bundle so a coding agent can implement the designs for real.
+Original design mockup and iteration history live in [`design/`](design/DESIGN_HANDOFF.md) — that
+folder documents the Claude Design handoff this build was implemented from.
 
-## What you should do — IMPORTANT
+## Getting started
 
-**Read the chat transcripts first.** There are 1 chat transcript(s) in `chats/`. The transcripts show the full back-and-forth between the user and the design assistant — they tell you **what the user actually wants** and **where they landed** after iterating. Don't skip them. The final HTML files are the output, but the chat is where the intent lives.
+**1. Install dependencies**
+```
+npm install
+```
 
-**Read `project/Emmanuel Sam Johns Portfolio.dc.html` in full.** The user had this file open when they triggered the handoff, so it's almost certainly the primary design they want built. Read it top to bottom — don't skim. Then **follow its imports**: open every file it pulls in (shared components, CSS, scripts) so you understand how the pieces fit together before you start implementing.
+**2. Run dev server**
+```
+npm run dev
+```
 
-**If anything is ambiguous, ask the user to confirm before you start implementing.** It's much cheaper to clarify scope up front than to build the wrong thing.
+**3. Edit content**
+```
+src/resources/content.tsx
+```
 
-## About the design files
+**4. Edit site config (theme, colors, routes)**
+```
+src/resources/once-ui.config.ts
+```
 
-The design medium is **HTML/CSS/JS** — these are prototypes, not production code. Your job is to **recreate them pixel-perfectly** in whatever technology makes sense for the target codebase (React, Vue, native, whatever fits). Match the visual output; don't copy the prototype's internal structure unless it happens to fit.
+**5. Add / edit project case studies**
+```
+Add a new .mdx file to src/app/work/projects
+```
 
-**Don't render these files in a browser or take screenshots unless the user asks you to.** Everything you need — dimensions, colors, layout rules — is spelled out in the source. Read the HTML and CSS directly; a screenshot won't tell you anything they don't.
+Fonts (Newsreader, Source Sans 3, Geist Mono) are self-hosted under `src/fonts/` via
+`next/font/local` so the build doesn't depend on reaching Google Fonts at build time.
 
-## Bundle contents
+## Pages
 
-- `README.md` — this file
-- `chats/` — conversation transcripts (read these!)
-- `project/` — the `Emmu Portfolio` project files (HTML prototypes, assets, components)
+- `/` — hero, selected projects, contact
+- `/about` — full experience, education, and skills (resume-style)
+- `/work` — all project case studies
+- Blog and gallery routes are disabled (`src/resources/once-ui.config.ts` → `routes`)
+
+## Deployment (GitHub Pages)
+
+The site is a static export (`output: "export"` in `next.config.mjs`) with no server-side
+features, so it deploys as plain static files.
+
+`.github/workflows/deploy.yml` builds and publishes to GitHub Pages automatically on every push
+to `main`. One-time setup after pushing this repo to GitHub:
+
+1. Go to the repo's **Settings → Pages**.
+2. Under **Build and deployment → Source**, choose **GitHub Actions**.
+3. Push to `main` (or run the workflow manually from the Actions tab) — the site will be live at
+   `https://<username>.github.io/<repo-name>/` a minute or two later.
+
+If the repo is named `<username>.github.io` (a user/org page), the site is served at the domain
+root instead of a `/repo-name/` subpath — `next.config.mjs` detects this automatically from
+`GITHUB_REPOSITORY` and adjusts `basePath` accordingly, no manual config needed. A custom domain
+(via a `CNAME` file / repo Pages settings) also serves from the root; set
+`NEXT_PUBLIC_BASE_PATH=""` as a repo variable in that case to force an empty `basePath`.
+
+To preview the static export locally:
+```
+npm run build
+npm run preview
+```
+
+## License
+
+This project is built on the Magic Portfolio template, distributed under CC BY-NC 4.0
+(attribution required, non-commercial use only). See `LICENSE`.

@@ -1,0 +1,24 @@
+---
+title: "Mapping Deep Ocean Ecosystems & Human Use Hotspots"
+publishedAt: "2025-11-01"
+summary: "An interactive Google Earth Engine map classifying deep-sea ecosystems by depth and slope, layered with simulated ARGO monitoring floats and the world's busiest fishing regions, built to support marine spatial planning and biodiversity assessment."
+images:
+  - "/images/projects/gee-deep-ocean-mapping/cover.svg"
+tag: "Google Earth Engine"
+---
+
+## Introduction
+
+The deep ocean covers more than half of Earth's surface yet remains largely unexplored and poorly mapped. Accurate spatial data on deep-sea ecosystems and human activities is essential for conservation, research, and sustainable resource use. This project uses Google Earth Engine (GEE) to build an interactive global map visualizing deep-sea ecosystem zones, simulated oceanographic monitoring points, and major marine fishing regions, supporting Convention on Biological Diversity goals around ecosystem representation and spatial planning of marine use (Levin et al., 2001; FAO, 2020).
+
+## Method
+
+Using global bathymetric data, the project classifies the seafloor into four ecosystem types: Hadal Trenches and Troughs (>6000m), Abyssal Plains (3000–6000m), Continental and Island Slopes (250–3000m), and Submarine Canyons (>200m depth, >6° slope), using logical depth/slope conditions in Earth Engine with land areas masked out. A simulated ARGO float dataset (temperature, salinity, pressure, monitored parameter) was added as a vector layer, alongside ten of the world's busiest fishing regions, including the Bering Sea, South China Sea, and Humboldt Current System, as labelled, color-coded markers. A custom legend built with Earth Engine's UI tools improves interpretability.
+
+## Results
+
+The output is a global, interactive map where deep-sea ecosystems are clearly distinguishable by depth class, continental slopes and canyons align with continental margins, while hadal and abyssal zones follow ocean trenches and basins. Simulated ARGO floats appear as point data, and the key fishing regions contextualize where ecological richness overlaps with intense human activity.
+
+## Conclusion
+
+This project demonstrates the power of Google Earth Engine for visualizing global ocean data by combining depth-based ecosystem mapping with monitoring analogies and human activity points. While some data is simulated, the workflow is fully transferable to real datasets like ARGO, OBIS, or FAO layers, supporting biodiversity assessments, marine spatial planning, and deep-sea conservation strategies.
