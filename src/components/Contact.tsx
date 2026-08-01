@@ -2,6 +2,7 @@ import { Background, Button, Column, Heading, Line, Row, Text } from "@once-ui-s
 import { person } from "@/resources";
 
 const info = [
+  { label: "Email", value: person.email },
   { label: "Phone", value: "+61 461 398 511" },
   { label: "Location", value: "Townsville, QLD, Australia" },
   { label: "References", value: "Available on request" },
@@ -58,7 +59,7 @@ export const Contact: React.FC<React.ComponentProps<typeof Column>> = ({ ...flex
               size="m"
               weight="default"
             >
-              {person.email}
+              Email me
             </Button>
             <Button
               href="https://www.linkedin.com/in/emmanuel-sam-johns-1b54911b2"
@@ -74,13 +75,14 @@ export const Contact: React.FC<React.ComponentProps<typeof Column>> = ({ ...flex
             </Button>
             <Button
               href="/Emmanuel_Sam_Johns_CV.pdf"
-              download="Emmanuel_Sam_Johns_CV.pdf"
+              target="_blank"
+              rel="noopener"
               data-border="rounded"
               variant="secondary"
               size="m"
               weight="default"
             >
-              Download CV
+              View CV
             </Button>
           </Row>
         </Column>

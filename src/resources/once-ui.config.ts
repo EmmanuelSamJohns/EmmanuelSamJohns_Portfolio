@@ -13,8 +13,12 @@ import {
 } from "@/types";
 import { home, person, social } from "./content";
 
-// IMPORTANT: Replace with your own domain address - it's used for SEO in meta tags and schema
-const baseURL: string = "https://emmanuelsamjohns.com";
+// Public origin of the deployed site. Used for SEO meta tags, OpenGraph/Twitter cards,
+// schema.org data, sitemap.xml and robots.txt — so it must match where the site is actually
+// served or link previews break. If the site ever moves under a sub-path (e.g. a project-page
+// repo rather than <user>.github.io) or onto a custom domain, update this to the full public
+// base, including any sub-path.
+const baseURL: string = "https://emmanuelsamjohns.github.io";
 
 const routes: RoutesConfig = {
   "/": true,

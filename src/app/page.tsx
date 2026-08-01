@@ -63,13 +63,14 @@ export default function Home() {
             <Row gap="12" wrap>
               <Button
                 href="/Emmanuel_Sam_Johns_CV.pdf"
-                download="Emmanuel_Sam_Johns_CV.pdf"
+                target="_blank"
+                rel="noopener"
                 data-border="rounded"
                 variant="primary"
                 size="m"
                 weight="default"
               >
-                Download CV
+                View CV
               </Button>
               <Button
                 href="https://www.linkedin.com/in/emmanuel-sam-johns-1b54911b2"
