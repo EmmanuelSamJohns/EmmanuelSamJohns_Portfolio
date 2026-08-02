@@ -16,6 +16,7 @@ export {
   routes,
   protectedRoutes,
   baseURL,
+  ogImage,
   fonts,
   style,
   schema,

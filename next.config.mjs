@@ -19,6 +19,12 @@ const basePath =
 const nextConfig = {
   output: "export",
   basePath,
+  // Next only prefixes basePath onto its own routing (next/link, next/image with
+  // optimization on). We set images.unoptimized below, which makes next/image emit
+  // src verbatim with no prefix — so any root-absolute asset path we render by hand
+  // (project screenshots) needs basePath available at runtime to prefix itself.
+  // src/utils/basePath.ts reads this.
+  env: { NEXT_PUBLIC_BASE_PATH: basePath },
   images: {
     unoptimized: true,
   },

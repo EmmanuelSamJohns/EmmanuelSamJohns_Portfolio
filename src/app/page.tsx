@@ -8,7 +8,7 @@ import {
   Schema,
   Meta,
 } from "@once-ui-system/core";
-import { home, about, person, baseURL } from "@/resources";
+import { home, about, person, baseURL, ogImage } from "@/resources";
 import { Contact } from "@/components/Contact";
 import { Projects } from "@/components/work/Projects";
 
@@ -18,7 +18,7 @@ export async function generateMetadata() {
     description: home.description,
     baseURL: baseURL,
     path: home.path,
-    image: home.image,
+    image: ogImage,
   });
 }
 
@@ -31,7 +31,7 @@ export default function Home() {
         path={home.path}
         title={home.title}
         description={home.description}
-        image={home.image}
+        image={ogImage}
         author={{
           name: person.name,
           url: `${baseURL}${about.path}`,

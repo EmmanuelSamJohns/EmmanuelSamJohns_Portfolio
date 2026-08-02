@@ -14,7 +14,7 @@ import {
   SpacingToken,
 } from "@once-ui-system/core";
 import { Footer, Header, RouteGuard, Providers } from "@/components";
-import { baseURL, effects, fonts, style, dataStyle, home, person } from "@/resources";
+import { baseURL, ogImage, effects, fonts, style, dataStyle, home, person } from "@/resources";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -22,7 +22,7 @@ export async function generateMetadata() {
     description: home.description,
     baseURL: baseURL,
     path: home.path,
-    image: home.image,
+    image: ogImage,
   });
 }
 

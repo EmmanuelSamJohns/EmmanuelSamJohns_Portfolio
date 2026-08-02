@@ -15,7 +15,7 @@ import {
   Avatar,
   Line,
 } from "@once-ui-system/core";
-import { baseURL, about, person, work } from "@/resources";
+import { baseURL, ogImage, about, person, work } from "@/resources";
 import { formatDate } from "@/utils/formatDate";
 import { ScrollToHash, CustomMDX } from "@/components";
 import { Metadata } from "next";
@@ -47,7 +47,7 @@ export async function generateMetadata({
     title: post.metadata.title,
     description: post.metadata.summary,
     baseURL: baseURL,
-    image: post.metadata.image || "/images/og-image.png",
+    image: post.metadata.image ? `${baseURL}${post.metadata.image}` : ogImage,
     path: `${work.path}/${post.slug}`,
   });
 }
@@ -83,7 +83,7 @@ export default async function Project({
         description={post.metadata.summary}
         datePublished={post.metadata.publishedAt}
         dateModified={post.metadata.publishedAt}
-        image={post.metadata.image || "/images/og-image.png"}
+        image={post.metadata.image ? `${baseURL}${post.metadata.image}` : ogImage}
         author={{
           name: person.name,
           url: `${baseURL}${about.path}`,
@@ -117,7 +117,11 @@ export default async function Project({
         </Row>
       </Row>
       {post.metadata.images.length > 0 && (
-        <Media priority aspectRatio="16 / 9" radius="m" alt="image" src={post.metadata.images[0]} />
+        // No fixed aspectRatio: these are map screenshots at their own aspect ratio
+        // (e.g. the Heron Island layout is ~1.26:1). Media defaults objectFit to
+        // "cover", so forcing 16:9 here would crop into the title bar and legend
+        // instead of just letterboxing empty space.
+        <Media priority radius="m" alt="image" src={post.metadata.images[0]} />
       )}
       <Column style={{ margin: "auto" }} as="article" maxWidth="xs">
         <CustomMDX source={post.content} />

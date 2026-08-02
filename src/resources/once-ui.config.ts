@@ -15,10 +15,18 @@ import { home, person, social } from "./content";
 
 // Public origin of the deployed site. Used for SEO meta tags, OpenGraph/Twitter cards,
 // schema.org data, sitemap.xml and robots.txt — so it must match where the site is actually
-// served or link previews break. If the site ever moves under a sub-path (e.g. a project-page
-// repo rather than <user>.github.io) or onto a custom domain, update this to the full public
-// base, including any sub-path.
-const baseURL: string = "https://emmanuelsamjohns.github.io";
+// served or link previews break. GitHub Pages currently serves this from a project-repo
+// sub-path (/EmmanuelSamJohns_Portfolio), so that sub-path (NEXT_PUBLIC_BASE_PATH, set in
+// next.config.mjs) has to be part of the base. If the repo is ever renamed to
+// EmmanuelSamJohns.github.io or moved to a custom domain, NEXT_PUBLIC_BASE_PATH becomes ""
+// automatically and this needs no further edit.
+const baseURL: string = `https://emmanuelsamjohns.github.io${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}`;
+
+// Absolute OG/Twitter preview image. Kept as a full URL (rather than a root-relative
+// "/images/og-image.png") because Meta.generate passes absolute URLs straight through,
+// while a relative one gets resolved against metadataBase — which, under a sub-path
+// deployment, does not reliably keep that sub-path. See baseURL comment above.
+const ogImage: string = `${baseURL}/images/og-image.png`;
 
 const routes: RoutesConfig = {
   "/": true,
@@ -238,6 +246,7 @@ export {
   routes,
   protectedRoutes,
   baseURL,
+  ogImage,
   fonts,
   style,
   schema,
