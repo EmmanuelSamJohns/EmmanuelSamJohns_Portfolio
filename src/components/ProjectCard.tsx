@@ -6,7 +6,9 @@ import {
   Column,
   Flex,
   Heading,
+  Row,
   SmartLink,
+  Tag,
   Text,
 } from "@once-ui-system/core";
 
@@ -19,6 +21,8 @@ interface ProjectCardProps {
   description: string;
   avatars: { src: string }[];
   link: string;
+  tag?: string;
+  mapUrl?: string;
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -29,6 +33,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   description,
   avatars,
   link,
+  tag,
+  mapUrl,
 }) => {
   return (
     <Column fillWidth gap="m">
@@ -48,7 +54,13 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
         gap="l"
       >
         {title && (
-          <Flex flex={5}>
+          <Flex flex={5} direction="column" gap="12">
+            {(tag || mapUrl) && (
+              <Row gap="8" wrap>
+                {tag && <Tag label={tag} size="s" variant="neutral" />}
+                {mapUrl && <Tag label="Live map" prefixIcon="play" size="s" variant="brand" />}
+              </Row>
+            )}
             <Heading as="h2" wrap="balance" variant="heading-strong-xl">
               {title}
             </Heading>

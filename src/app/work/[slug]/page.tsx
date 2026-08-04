@@ -17,7 +17,7 @@ import {
 } from "@once-ui-system/core";
 import { baseURL, ogImage, about, person, work } from "@/resources";
 import { formatDate } from "@/utils/formatDate";
-import { ScrollToHash, CustomMDX } from "@/components";
+import { ScrollToHash, CustomMDX, LiveMap } from "@/components";
 import { Metadata } from "next";
 import { Projects } from "@/components/work/Projects";
 
@@ -116,12 +116,16 @@ export default async function Project({
           </Text>
         </Row>
       </Row>
-      {post.metadata.images.length > 0 && (
-        // No fixed aspectRatio: these are map screenshots at their own aspect ratio
-        // (e.g. the Heron Island layout is ~1.26:1). Media defaults objectFit to
-        // "cover", so forcing 16:9 here would crop into the title bar and legend
-        // instead of just letterboxing empty space.
-        <Media priority radius="m" alt="image" src={post.metadata.images[0]} />
+      {post.metadata.mapUrl ? (
+        <LiveMap src={post.metadata.mapUrl} poster={post.metadata.images[0]} alt={post.metadata.title} />
+      ) : (
+        post.metadata.images.length > 0 && (
+          // No fixed aspectRatio: these are map screenshots at their own aspect ratio
+          // (e.g. the Heron Island layout is ~1.26:1). Media defaults objectFit to
+          // "cover", so forcing 16:9 here would crop into the title bar and legend
+          // instead of just letterboxing empty space.
+          <Media priority radius="m" alt="image" src={post.metadata.images[0]} />
+        )
       )}
       <Column style={{ margin: "auto" }} as="article" maxWidth="xs">
         <CustomMDX source={post.content} />

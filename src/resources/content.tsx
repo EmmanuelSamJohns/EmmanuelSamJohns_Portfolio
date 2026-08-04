@@ -6,7 +6,7 @@ const person: Person = {
   name: `Emmanuel Sam Johns`,
   role: "Aspiring Environmental Consultant",
   avatar: "",
-  email: "emmanuel.samjohns@my.jcu.edu.au",
+  email: "emmanuel.samjohns@outlook.com",
   location: "Australia/Brisbane", // Townsville, QLD, Australia
   languages: [],
   locale: "en",
