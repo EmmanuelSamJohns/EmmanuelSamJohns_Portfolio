@@ -186,7 +186,7 @@ const about: About = {
       {
         title: "GIS & Spatial Mapping",
         tags: [
-          { name: "ArcGIS (in progress)" },
+          { name: "ArcGIS" },
           { name: "R (ggplot2, ggmap)" },
           { name: "GeoNadir drone imagery" },
           { name: "Satellite imagery analysis" },
